@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      button {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="count">Click Count: 0</p>
+    <button id="button">Click</button>
+    <script>
+      const button = document.getElementById("button");
+      const countDisplay = document.getElementById("count");
+      let clickCount = 0;
+      
+      button.addEventListener("click", function() {
+        clickCount += 1;
+        countDisplay.innerHTML = `Click Count: ${clickCount}`;
+        button.style.left = Math.floor(Math.random() * 450) + "px";
+        button.style.top = Math.floor(Math.random() * 450) + "px";
+        if (clickCount > 10) {
+          if (confirm("Do you want to go to Naver.com?")) {
+            window.location.href = "https://www.naver.com";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
